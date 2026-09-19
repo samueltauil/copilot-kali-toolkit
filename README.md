@@ -36,7 +36,7 @@ agent and the `pentest-report-writing` skill.
 
 ```
 .github/plugin/marketplace.json          marketplace manifest
-plugins/kali-pentest-toolkit/
+plugins/kali-pentest/
   plugin.json                            plugin manifest
   agents/*.agent.md                      14 custom agents, one per tool category
   skills/*/SKILL.md                      9 step by step command workflows
@@ -84,7 +84,7 @@ The recommended way is through the marketplace:
 
 ```shell
 copilot plugin marketplace add samueltauil/copilot-kali-toolkit
-copilot plugin install kali-pentest-toolkit@copilot-kali-toolkit
+copilot plugin install kali-pentest@copilot-kali-toolkit
 ```
 
 You can also install straight from a local clone, which is useful if you
@@ -92,7 +92,7 @@ want to edit the agents yourself:
 
 ```shell
 git clone https://github.com/samueltauil/copilot-kali-toolkit.git
-copilot plugin install ./copilot-kali-toolkit/plugins/kali-pentest-toolkit
+copilot plugin install ./copilot-kali-toolkit/plugins/kali-pentest
 ```
 
 Restart Copilot CLI (or start a new session) after installing.
@@ -118,14 +118,14 @@ If you installed from the marketplace:
 
 ```shell
 copilot plugin marketplace update copilot-kali-toolkit
-copilot plugin update kali-pentest-toolkit
+copilot plugin update kali-pentest
 ```
 
 If you installed from a local clone, pull the latest changes and reinstall:
 
 ```shell
 cd copilot-kali-toolkit && git pull
-copilot plugin install ./plugins/kali-pentest-toolkit
+copilot plugin install ./plugins/kali-pentest
 ```
 
 ## Verify it loaded

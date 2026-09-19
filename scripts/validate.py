@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN_DIR = ROOT / "plugins" / "kali-pentest-toolkit"
+PLUGIN_DIR = ROOT / "plugins" / "kali-pentest"
 AGENTS_DIR = PLUGIN_DIR / "agents"
 SKILLS_DIR = PLUGIN_DIR / "skills"
 
@@ -75,6 +75,10 @@ def main() -> int:
         entries = []
     elif entries[0].get("version") != plugin.get("version"):
         errors.append("plugin and marketplace versions do not match")
+    elif entries[0].get("name") != plugin.get("name"):
+        errors.append("plugin and marketplace names do not match")
+    elif entries[0].get("source") != "./plugins/kali-pentest":
+        errors.append("marketplace plugin source must be ./plugins/kali-pentest")
 
     for field in ("agents", "skills"):
         paths = component_paths(plugin.get(field))

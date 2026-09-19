@@ -1,7 +1,7 @@
 # Copilot instructions for copilot-kali-toolkit
 
 This repository is a **GitHub Copilot CLI plugin marketplace**: it packages a set of
-custom agents and skills (`plugins/kali-pentest-toolkit/`) that give Copilot CLI
+custom agents and skills (`plugins/kali-pentest/`) that give Copilot CLI
 expertise in the security/penetration-testing tool categories shipped with Kali
 Linux (OSINT, scanning, vulnerability analysis, web app testing, password
 attacks, wireless auditing, exploitation, Active Directory attacks,
@@ -9,9 +9,9 @@ post-exploitation, sniffing/MITM, forensics, reverse engineering, reporting).
 
 ## Repository layout
 - `.github/plugin/marketplace.json`: marketplace manifest, lists the plugin(s) in this repo.
-- `plugins/kali-pentest-toolkit/plugin.json`: legacy-format plugin manifest (`agents`, `skills` component paths).
-- `plugins/kali-pentest-toolkit/agents/*.agent.md`: one custom agent per Kali tool category.
-- `plugins/kali-pentest-toolkit/skills/*/SKILL.md`: concrete, copy-pasteable command workflows for common tasks.
+- `plugins/kali-pentest/plugin.json`: legacy-format plugin manifest (`agents`, `skills` component paths).
+- `plugins/kali-pentest/agents/*.agent.md`: one custom agent per Kali tool category.
+- `plugins/kali-pentest/skills/*/SKILL.md`: concrete, copy-pasteable command workflows for common tasks.
 
 ## Conventions when editing or adding content
 - Every agent body must end with the **Rules of engagement** safety block:
