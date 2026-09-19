@@ -59,6 +59,9 @@ def main() -> int:
     if not (ROOT / "LICENSE").is_file():
         errors.append("LICENSE: missing")
 
+    if plugin.get("name") != "kali-pentest":
+        errors.append("plugin.json: plugin name must be kali-pentest")
+
     expected_repository = "https://github.com/samueltauil/copilot-kali-toolkit"
     if plugin.get("repository") != expected_repository:
         errors.append("plugin.json: repository must point to the public GitHub repository")

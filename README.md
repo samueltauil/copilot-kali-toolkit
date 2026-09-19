@@ -1,4 +1,4 @@
-# Kali Linux Security Toolkit for GitHub Copilot CLI
+# Kali Pentest Agents and Skills for GitHub Copilot CLI
 
 A GitHub Copilot CLI plugin that adds custom agents and skills for security
 and penetration testing with Kali Linux. Instead of typing raw nmap or sqlmap
@@ -87,8 +87,8 @@ copilot plugin marketplace add samueltauil/copilot-kali-toolkit
 copilot plugin install kali-pentest@copilot-kali-toolkit
 ```
 
-You can also install straight from a local clone, which is useful if you
-want to edit the agents yourself:
+To edit the agents locally, clone the repository and install from the plugin
+directory:
 
 ```shell
 git clone https://github.com/samueltauil/copilot-kali-toolkit.git
@@ -118,7 +118,7 @@ If you installed from the marketplace:
 
 ```shell
 copilot plugin marketplace update copilot-kali-toolkit
-copilot plugin update kali-pentest
+copilot plugin update kali-pentest@copilot-kali-toolkit
 ```
 
 If you installed from a local clone, pull the latest changes and reinstall:
