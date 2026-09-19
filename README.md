@@ -1,10 +1,10 @@
 # Kali Linux Security Toolkit for GitHub Copilot CLI
 
-A GitHub Copilot CLI plugin that adds custom agents and skills for the
-security and penetration testing tools that ship with Kali Linux. Instead of
-typing raw nmap or sqlmap flags from memory, you describe what you're trying
-to do and Copilot picks the right agent, follows a sane methodology, and
-gives you the actual commands for the tools installed on your system.
+A GitHub Copilot CLI plugin that adds custom agents and skills for security
+and penetration testing with Kali Linux. Instead of typing raw nmap or sqlmap
+flags from memory, you describe what you're trying to do and Copilot can
+select a relevant agent, follow a repeatable methodology, and suggest commands
+for the tools installed on your system.
 
 This is built for people running Copilot CLI directly on a Kali box (a VM,
 WSL, or bare metal) during authorized penetration tests, CTFs, or lab work
@@ -73,13 +73,14 @@ Concrete runbooks with real commands: `nmap-recon`, `web-content-discovery`,
 - Kali Linux (or any Linux distro with the equivalent tools installed).
 - [GitHub Copilot CLI](https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli)
   installed and logged in (`copilot`, then `/login` if needed).
-- The actual security tools referenced by each agent (nmap, sqlmap, hydra,
-  aircrack-ng, and so on). Kali installs most of these by default; anything
-  missing can be added with `apt install <package>`.
+- The security tools required by the workflow you plan to use (nmap, sqlmap,
+  hydra, aircrack-ng, and so on). Tool availability depends on the Kali image
+  and metapackages you installed. Use `apt search <tool>` and
+  `sudo apt install <package>` for anything missing.
 
 ## Install
 
-The recommended way is through the marketplace, once the repo is public:
+The recommended way is through the marketplace:
 
 ```shell
 copilot plugin marketplace add samueltauil/copilot-kali-toolkit
@@ -105,10 +106,11 @@ Nothing needs to be configured to get started. Two things worth knowing:
   `glob`, with `web_search`/`web_fetch` added for `osint-recon` only). If
   your environment needs tighter restrictions, edit the `tools:` line in the
   relevant `agents/*.agent.md` file.
-- **Adding your own scope defaults.** If you always test the same lab
-  range or client environment, add a short note to your project's
-  `AGENTS.md` or `.github/copilot-instructions.md` describing the default
-  authorized scope so the orchestrator doesn't have to ask every time.
+- **Setting engagement constraints.** Put reusable testing rules and
+  prohibited techniques in your project's `AGENTS.md` or
+  `.github/copilot-instructions.md`. Confirm the authorized targets, dates,
+  and scope separately for every engagement. Do not store a target range as
+  permanently authorized.
 
 ## Update
 
@@ -167,8 +169,14 @@ command, or improve a skill's accuracy are welcome. See
 [`.github/copilot-instructions.md`](.github/copilot-instructions.md) for the
 conventions this repo follows.
 
+Run the repository validator before opening a pull request:
+
+```shell
+python3 scripts/validate.py
+```
+
 ## License
 
-MIT. Tool names mentioned throughout (Nmap, Metasploit, Kali Linux, and so
-on) belong to their respective projects. This project is not affiliated
-with or endorsed by Offensive Security.
+[MIT](LICENSE). Tool names mentioned throughout (Nmap, Metasploit, Kali
+Linux, and so on) belong to their respective projects. This project is not
+affiliated with or endorsed by OffSec.
