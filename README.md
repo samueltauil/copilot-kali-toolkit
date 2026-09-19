@@ -1,4 +1,4 @@
-# copilot-kali-toolkit
+# Kali Linux Security Toolkit for GitHub Copilot CLI
 
 A GitHub Copilot CLI plugin that adds custom agents and skills for the
 security and penetration testing tools that ship with Kali Linux. Instead of
