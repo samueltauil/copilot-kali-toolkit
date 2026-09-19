@@ -1,0 +1,19 @@
+{
+  "name": "copilot-kali-toolkit",
+  "owner": {
+    "name": "copilot-kali-toolkit contributors",
+    "email": "security@example.com"
+  },
+  "metadata": {
+    "description": "Marketplace hosting the kali-pentest-toolkit plugin: Copilot CLI agents and skills for every major Kali Linux security tool category.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "kali-pentest-toolkit",
+      "description": "Custom agents and skills covering Kali Linux OSINT, scanning, vulnerability analysis, web/app testing, password attacks, wireless auditing, exploitation, Active Directory attacks, post-exploitation, sniffing/MITM, forensics, reverse engineering, and reporting.",
+      "version": "1.0.0",
+      "source": "./plugins/kali-pentest-toolkit"
+    }
+  ]
+}
